@@ -6,6 +6,7 @@ import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import Dashboard from '@/modules/dashboard';
 import { getGithubUser } from '@/services/github';
+import { getReadStats } from '@/services/wakatime';
 
 interface DashboardPageProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,11 +20,13 @@ const PAGE_DESCRIPTION =
 const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
   return (
     <SWRConfig value={{ fallback }}>
-      <NextSeo title={`${PAGE_TITLE} - Ryan Aulia`} />
-      <Container data-aos='fade-up'>
-        <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <Dashboard />
-      </Container>
+      <>
+        <NextSeo title={`${PAGE_TITLE} - Shubham`} />
+        <Container data-aos='fade-up'>
+          <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+          <Dashboard />
+        </Container>
+      </>
     </SWRConfig>
   );
 };
@@ -31,13 +34,12 @@ const DashboardPage: NextPage<DashboardPageProps> = ({ fallback }) => {
 export default DashboardPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const readStats = await getReadStats();
+  const readStats = await getReadStats();
   const githubUserPersonal = await getGithubUser('personal');
-
   return {
     props: {
       fallback: {
-        // '/api/read-stats': readStats.data,
+        '/api/read-stats': readStats.data,
         '/api/github?type=personal': githubUserPersonal?.data,
       },
     },

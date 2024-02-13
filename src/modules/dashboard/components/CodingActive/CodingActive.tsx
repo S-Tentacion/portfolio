@@ -27,8 +27,8 @@ const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
       const lastUpdateDate = lastUpdate || data?.last_update;
       if (lastUpdateDate) {
         const zonedDate = utcToZonedTime(
-          zonedTimeToUtc(lastUpdateDate, 'Asia/Jakarta'),
-          'Asia/Jakarta'
+          zonedTimeToUtc(lastUpdateDate, 'Asia/Kolkata'),
+          'Asia/Kolkata'
         );
         const distance = formatDistanceToNowStrict(zonedDate, {
           addSuffix: true,
@@ -57,7 +57,8 @@ const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
         <div className='dark:text-neutral-400 md:flex-row md:items-center'>
           <span>My </span>
           <Link
-            href='https://wakatime.com/@aulianza'
+            href='https://wakatime.com/@shubhamk'
+            target='_blank'
             className='hover:text-neutral-900 hover:underline dark:hover:text-neutral-100'
           >
             WakaTime

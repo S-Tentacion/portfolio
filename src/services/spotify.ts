@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 import querystring from 'querystring';
@@ -13,9 +14,9 @@ import {
   TrackProps,
 } from '@/common/types/spotify';
 
-const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
-const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
-const REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
+const CLIENT_ID = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
+const REFRESH_TOKEN = process.env.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN;
 const TOKEN = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64');
 
 const BASE_URL = 'https://api.spotify.com/v1';
@@ -38,13 +39,11 @@ const getAccessToken = async (): Promise<AccessTokenResponseProps> => {
       },
     }
   );
-
   return response.data;
 };
 
 export const getAvailableDevices = async (): Promise<DeviceResponseProps> => {
   const { access_token } = await getAccessToken();
-
   const response = await axios.get(AVAILABLE_DEVICES_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
@@ -64,7 +63,7 @@ export const getAvailableDevices = async (): Promise<DeviceResponseProps> => {
     is_active: device.is_active,
     type: device.type,
     model: PAIR_DEVICES[device?.type]?.model || 'Unknown Device',
-    id: PAIR_DEVICES[device?.type]?.id || 'aulianza-device',
+    id: PAIR_DEVICES[device?.type]?.id || 'shubham-device',
   }));
 
   return {

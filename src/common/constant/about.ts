@@ -3,13 +3,13 @@ export const ABOUT = `
 	Hi there! Thanks for visiting my personal website.
 </p>
 <p>
-	I'm Ryan. With over 10+ years of experience in Web Development, covering both frontend and backend, I'm well-versed in Project Management methods like Waterfall and Agile. I'm particularly passionate about frontend side, where I focus on creating web applications that are not only precise but also user-friendly experiences.
+	I'm Shubham. With over 3+ years of experience in Web Development, covering both frontend and backend, I'm well-versed in Project Management methods like Waterfall and Agile. I'm particularly passionate about frontend side, where I focus on creating web applications that are not only precise but also user-friendly experiences.
 </p>
 <p>
-	I specialize in JavaScript and PHP, also it's frameworks, including React (Next.js, Vite), Vue (Nuxt.js), Angular, Node.js, and PHP (Codeigniter, Laravel). I love exploring new web technologies and features.
+	I specialize in JavaScript, also it's frameworks, including React (Next.js) and Node.js. I love exploring new web technologies and features.
 </p>
 <p>
-	Throughout my career, I've successfully overseen various Software Engineering Projects for different companies, from giants company like Gama Plantation, dynamic ventures like Paper.id, and forward-thinking startups like Sirka.
+Over the course of my career, I have successfully managed various Software Engineering projects. I developed 8+ projects and primarily worked with React.js.
 </p>
 <p>
 	I firmly believe that effective communication is vital for success in any role.

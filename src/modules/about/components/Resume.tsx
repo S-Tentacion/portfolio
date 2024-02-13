@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { LuDownload as DownloadIcon } from 'react-icons/lu';
 
 const Resume = () => {
-  const RESUME_URL = 'https://bit.ly/cv-aulianza';
+  const RESUME_URL =
+    'https://drive.google.com/file/d/1Ia4b0UEmBgyYtOHw_RSFDYPNR__TqX81/view?usp=sharing';
 
   return (
     <Link

@@ -20,8 +20,8 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
       )}
     >
       <Image
-        src='/images/aulianza-new.png'
-        alt='Ryan Aulia'
+        src='/images/shubham.jpeg'
+        alt='Shubham'
         width={expandMenu ? 80 : imageSize}
         height={expandMenu ? 80 : imageSize}
         rounded='rounded-full'
@@ -30,7 +30,7 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
       <div className='flex gap-2 items-center mt-1 lg:mt-4'>
         <Link href='/' passHref>
           <h2 className='flex-grow text-lg lg:text-xl font-sora font-medium'>
-            Ryan Aulia
+            Shubham
           </h2>
         </Link>
         <Tooltip title='Verified'>
@@ -38,7 +38,7 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
         </Tooltip>
       </div>
       <div className='hidden lg:flex text-sm font-sora text-neutral-600 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-300'>
-        @aulianza
+        @shubham
       </div>
     </div>
   );

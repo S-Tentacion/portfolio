@@ -16,7 +16,7 @@ export const formatDate = (date: string, type = 'MMMM dd, yyyy') => {
   }
 
   const formattedDate = format(
-    utcToZonedTime(parseISO(date), 'Asia/Jakarta'),
+    utcToZonedTime(parseISO(date), 'Asia/Kolkata'),
     type
   );
   return formattedDate;

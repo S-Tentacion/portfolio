@@ -7,15 +7,9 @@ import { ProjectItemProps } from '@/common/types/projects';
 import ProjectLink from './ProjectLink';
 
 const ProjectDetail = ({
-  title,
-  image,
-  stacks,
-  link_demo,
-  link_github,
+  frontMatter: { title, linkSourceCode, linkDemo, image, stacks },
   content,
 }: ProjectItemProps) => {
-  const stacksArray = JSON.parse(stacks);
-
   return (
     <div className='space-y-8'>
       <div className='flex flex-col lg:flex-row items-start lg:items-center sm:flex-row gap-5 justify-between'>
@@ -24,7 +18,7 @@ const ProjectDetail = ({
             Tech Stack :
           </span>
           <div className='flex flex-wrap items-center gap-3'>
-            {stacksArray?.map((stack: string, index: number) => (
+            {stacks?.map((stack: string, index: number) => (
               <div key={index}>
                 <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
               </div>
@@ -33,8 +27,8 @@ const ProjectDetail = ({
         </div>
         <ProjectLink
           title={title}
-          link_demo={link_demo}
-          link_github={link_github}
+          linkDemo={linkDemo}
+          linkSourceCode={linkSourceCode}
         />
       </div>
       <Image

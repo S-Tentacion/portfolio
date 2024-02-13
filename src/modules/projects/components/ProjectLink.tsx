@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import { BsGithub as GithubIcon } from 'react-icons/bs';
 import { FiExternalLink as LinkIcon } from 'react-icons/fi';
-
+import { PiPuzzlePieceDuotone } from 'react-icons/pi';
 interface LinkComponentProps {
   url: string;
   text: string;
@@ -11,11 +10,11 @@ interface LinkComponentProps {
 
 interface ProjectLinkProps {
   title?: string;
-  link_github?: string;
-  link_demo?: string;
+  linkSourceCode?: string;
+  linkDemo?: string;
 }
 
-const ProjectLink = ({ title, link_github, link_demo }: ProjectLinkProps) => {
+const ProjectLink = ({ title, linkSourceCode, linkDemo }: ProjectLinkProps) => {
   const LinkComponent = ({ url, text, icon }: LinkComponentProps) => {
     const eventName = `Click ${text} - Project ${title}`;
 
@@ -33,19 +32,19 @@ const ProjectLink = ({ title, link_github, link_demo }: ProjectLinkProps) => {
 
   return (
     <div className='flex gap-4'>
-      {link_github && (
+      {linkSourceCode && (
         <LinkComponent
-          url={link_github}
+          url={linkSourceCode}
           text='Source Code'
-          icon={<GithubIcon size={22} />}
+          icon={<PiPuzzlePieceDuotone size={22} />}
         />
       )}
-      {link_github && link_demo && (
+      {linkSourceCode && linkDemo && (
         <span className='text-neutral-400 dark:text-neutral-600'>|</span>
       )}
-      {link_demo && (
+      {linkDemo && (
         <LinkComponent
-          url={link_demo}
+          url={linkDemo}
           text='Live Demo'
           icon={<LinkIcon size={22} />}
         />

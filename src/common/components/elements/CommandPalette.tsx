@@ -12,7 +12,7 @@ import { HiOutlineChat as AiIcon } from 'react-icons/hi';
 import { useDebounce } from 'usehooks-ts';
 
 import {
-  EXTERNAL_LINKS,
+  // EXTERNAL_LINKS,
   MENU_ITEMS,
   SOCIAL_MEDIA,
 } from '@/common/constant/menu';
@@ -71,13 +71,13 @@ const CommandPalette = () => {
         closeOnSelect: true,
       })),
     },
-    {
-      title: 'EXTERNAL LINKS',
-      children: EXTERNAL_LINKS?.map((menu) => ({
-        ...menu,
-        closeOnSelect: true,
-      })),
-    },
+    // {
+    //   title: 'EXTERNAL LINKS',
+    //   children: EXTERNAL_LINKS?.map((menu) => ({
+    //     ...menu,
+    //     closeOnSelect: true,
+    //   })),
+    // },
     {
       title: 'APPEARANCE',
       children: [

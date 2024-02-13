@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const OPENAI_URL = 'https://api.openai.com/v1/completions';
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_API_KEY = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 
 export const postChatPrompt = async (prompt: string) => {
   const response = await axios.post(
